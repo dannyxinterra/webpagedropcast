@@ -29,19 +29,19 @@ def main():
              width = 500,
              caption="Figure S1: The drop-casting method is adopted in our lab to prepare electrocatalyst samples. Despite its seemingly simple appearance, automating this process for high-throughput purposes can present significant challenges.")
     
-    st.markdown("# Objectives")
+    st.markdown("## Objectives")
     st.markdown('''
                 The objectives are mainly two folds: (i) the catalyst materials are well dispersed into the carbon substrate, so that the metal elements are well utilized, and (ii) the catalyst footprint areas are identical across samples, since it’s a convention to normalize the performance (current density - mA/cm2) based on this number. Seemingly straightforward, it actually took us about 3 months to make this automated workflow “work”, as shown in Supplementary Video 2.
                 '''
                 )
-    st.markdown("# Discussions")
+    st.markdown("## Discussions")
     
     st.markdown('''
                 There are way more issues than we expected beneath this simple looking process. To achieve a satisfactory drop casting process, a thorough analysis of almost all the components are necessary. The subsequent paragraphs highlight three primary concerns that significantly contribute to the variability of the final results.
                 '''
                 )
     
-    st.markdown("## Wettability issue")
+    st.markdown("### Wettability issue")
     
     st.markdown('''
                 The wet-proofing layer determines the dispersion of the precursor solution. Even a low percentage of wet-proofing (e.g. 5%) can result in poor wetting of the carbon by the ethanol, causing droplets to sit on the substrate for a period of time. This can lead to non-uniform distribution, as evidenced by the coffee ring effect in the samples shown in the second row of FIG S2a. The concentration in the outer circle is significantly higher than in the middle region, which is highly unfavorable. Furthermore, the wet-proofing layer may be unevenly distributed across the sample due to manufacturing imperfections, as demonstrated in Supplementary Video 1. In some areas, the carbon wets the ethanol immediately, while in others, the ethanol beads up before wetting. This inconsistency can result in uneven dispersion of the catalyst and varying footprint sizes across samples.
@@ -57,7 +57,7 @@ We then switched to the carbon paper with no wet-proofing layer, but immediately
      
     
     
-    st.markdown("## Non Ideal geometry of carbon substrate")
+    st.markdown("### Non Ideal geometry of carbon substrate")
     st.markdown('''
                The carbon substrate cut from a commercial 10cm by 10cm sheet may not always be perfectly flat, as it can have some inherent curvature and cutting-induced twist. This issue was recognized after observing a wired phenomenon in some samples, e.g. in Supplementary Video 3 (carbon strip indexed from 1-6 from left to right), we can see (i) no precursor foot print on #6 carbon strip, and (ii) there are regular footprints in #4 and #5 in the first 4 drop-casts while the last one is missing. Initially, we attributed this to the non-uniformity of the carbon paper, but later we realized that it’s owing to the intrinsic curvature of the carbon paper strip. As shown in FIG S2a, the pipette tip's height was set at the same level across the entire strip, while the carbon was not perfectly flat in this range. As a result, the pipette tip would make good contact with the carbon in the middle region, while the droplet will dangle on the tip near the edge, giving no precursor footprint on the carbon substrate. This hypothesis was confirmed through a closer observation in Supplementary Video 4. However, lowering the height of the pipetting tip recklessly could result in experiment accidents, such as piercing through and even dragging the carbon substrate, as shown in Supplementary Video 5. The discovery of this issue is asking us to carefully tune the height of the pipette tip, down to 100μm interval (the thickness of the carbon strip varies between 100~400μm). 
 
@@ -69,7 +69,7 @@ Besides, some local tilt can also affect the shape of the footprint. Instead of 
               
               caption="Figure S3: (a) A scheme aiming to account for the absence of a drop-casting footprint near the edge occasionally, as observed in Supplementary Video 3. As the height of the pipette tip is fixed across the entire strip, any inherent curvature in the carbon substrate can cause the droplet to be suspended on the tip without coming into contact with the carbon near the edge, which is evidenced in Supplementary Video 4. (b) Uneven distribution of the catalyst can also result from local tilt, as seen in the first carbon strip where the upper half appears darker due to a local incline towards the up side.")
     
-    st.markdown("## Diffusion-driven cross contamination")
+    st.markdown("### Diffusion-driven cross contamination")
     st.markdown('''
                In most cases, the goal is to drop-cast as quickly as possible to reduce ethanol solvent evaporation and save time. However, it has been observed that if the drop-casting rate is too fast, the precursor can diffuse over a longer distance and potentially contaminate neighboring samples, as seen in FIG S4a. Therefore, to achieve an ideal footprint geometry (a round spot with diameter ~10mm), the drop-casting rate needs to be carefully tuned, which is a variable dependent on the carbon paper thickness and sample stage temperature. 
 
@@ -81,7 +81,7 @@ Additionally, we discovered another intriguing factor: the carbon fiber in the c
               
               caption="Figure S4: (a) A high rate of pipetting can lead to expanded drop-casting footprint, increasing the likelihood of sample cross-contamination. Additionally, we have observed that the carbon strips cut using different methods (strip 1 with perpendicular cut, strip 2 with parallel cut) can exhibit variations in terms of (b) darkness and (c) precursor diffusion behavior. Carbon strip 2 prepared with “parallel cut” tends to produce a footprint that extends in its length direction, which increases the risk of cross-contamination and is therefore less desirable. (d) A commercial square-shaped carbon paper sheet is not isotropic regarding its carbon fiber alignment, and here, we denote the dominant direction with white lines. This anisotropy leads to two cutting approaches, (e) “perpendicular cut”, where we cut perpendicular to the dominant fiber direction and (f) “parallel cut”, where we cut parallel with the dominant fiber direction.")
 
-    st.markdown("# Summary")
+    st.markdown("## Summary")
     st.markdown('''
                As mentioned in the main text, all the aforementioned issues may look trivial at first glance, while they only become trivial after we realize their existence. Before we take them under control, they are real challenges that could fail our active learning project. Taking the last issue as an example, as shown in FIG S4c, the carbon strips prepared with “parallel cut” method could deliver ~10% larger footprint area than that prepared with “perpendicular cut” method, which will lead to a nominal increase in electrocatalytic performance (even with a fixed catalyst loading, a larger sample area usually yields a higher current value). Without acknowledging the carbon paper is anisotropic, one would just perform the cutting process at will and obtain scattered results. If multiple issues like this one are not well controlled, they can accumulate and lead to a single phenomenon: we find the experiment “irreproducible”.
                 '''
