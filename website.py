@@ -28,12 +28,12 @@ def main():
              width = 500,
              caption="Figure S1: The drop-casting method is adopted in our lab to prepare electrocatalyst samples. Despite its seemingly simple appearance, automating this process for high-throughput purposes can present significant challenges.")
     
-    st.subheader("Objectives")
+    st.header("Objectives")
     st.markdown('''
                 The objectives are mainly two folds: (i) the catalyst materials are well dispersed into the carbon substrate, so that the metal elements are well utilized, and (ii) the catalyst footprint areas are identical across samples, since it’s a convention to normalize the performance (current density - mA/cm2) based on this number. Seemingly straightforward, it actually took us about 3 months to make this automated workflow “work”, as shown in Supplementary Video 2.
                 '''
                 )
-    st.subheader("Discussions")
+    st.header("Discussions")
     
     st.markdown('''
                 There are way more issues than we expected beneath this simple looking process. To achieve a satisfactory drop casting process, a thorough analysis of almost all the components are necessary. The subsequent paragraphs highlight three primary concerns that significantly contribute to the variability of the final results.
@@ -80,7 +80,7 @@ Additionally, we discovered another intriguing factor: the carbon fiber in the c
               
               caption="Figure S4: (a) A high rate of pipetting can lead to expanded drop-casting footprint, increasing the likelihood of sample cross-contamination. Additionally, we have observed that the carbon strips cut using different methods (strip 1 with perpendicular cut, strip 2 with parallel cut) can exhibit variations in terms of (b) darkness and (c) precursor diffusion behavior. Carbon strip 2 prepared with “parallel cut” tends to produce a footprint that extends in its length direction, which increases the risk of cross-contamination and is therefore less desirable. (d) A commercial square-shaped carbon paper sheet is not isotropic regarding its carbon fiber alignment, and here, we denote the dominant direction with white lines. This anisotropy leads to two cutting approaches, (e) “perpendicular cut”, where we cut perpendicular to the dominant fiber direction and (f) “parallel cut”, where we cut parallel with the dominant fiber direction.")
 
-    st.subheader("Summary")
+    st.header("Summary")
     st.markdown('''
                As mentioned in the main text, all the aforementioned issues may look trivial at first glance, while they only become trivial after we realize their existence. Before we take them under control, they are real challenges that could fail our active learning project. Taking the last issue as an example, as shown in FIG S4c, the carbon strips prepared with “parallel cut” method could deliver ~10% larger footprint area than that prepared with “perpendicular cut” method, which will lead to a nominal increase in electrocatalytic performance (even with a fixed catalyst loading, a larger sample area usually yields a higher current value). Without acknowledging the carbon paper is anisotropic, one would just perform the cutting process at will and obtain scattered results. If multiple issues like this one are not well controlled, they can accumulate and lead to a single phenomenon: we find the experiment “irreproducible”.
                 '''
