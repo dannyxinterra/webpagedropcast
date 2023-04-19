@@ -17,7 +17,7 @@ def main():
                 '''
                 )
     with st.beta_container("Background"):
-        st.markdown('''
+        st.write('''
                     There are plenty of methods to load the active materials onto a conductive substrate to make a heterogeneous electrochemistry catalyst. In our lab, the active materials are multiple metal salts (e.g. FeCl3, Cu(NO3)2) dissolved in ethanol, and the substrate is a commercial carbon thin film. We are using Opentrons to handle all the precursor mixing jobs, as well as the final drop-casting step, which can be illustrated in FIG S1. From a manual experiment perspective, this step cannot be even simpler, a bunch of operations are surely more complex than this one. However, lots of issues will just arise once we attempt to automate this process in a high-throughput manner. Supplementary video 1 shows the preliminary results, which apparently deliver inconsistent wetting behavior and sample size. 
                     ''')
 
