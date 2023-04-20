@@ -22,6 +22,24 @@ def add_video(vid_url, vid_cap):
     st.caption(vid_cap)
 
 
+def create_link(text):
+    # remove spaces and special characters from the text
+    link_text = text.lower().replace(" ", "-").replace(".", "")
+    # return the hyperlink
+    return f"<a style='text-decoration:none; color:#333' href='#{link_text}'>{text}</a>"
+
+
+def header_sidebar(text, subheaders=None):
+    if subheaders:
+        return f"<li>{create_link(text)}<ul>{''.join([subheader_sidebar(text) for text in subheaders])}</ul></li>"
+    return f"<li>{create_link(text)}</li>"
+
+
+def subheader_sidebar(text):
+    return f"<li>{create_link(text)}</li>"
+
+
+
 def main():
     st.title(ct.title)
 
@@ -55,7 +73,7 @@ def main():
     # Figure 2
     add_fig(ct.fig_urls[1], ct.fig_caps[1])
 
-    st.subheader("Non Ideal geometry of carbon substrate")
+    st.subheader("Non Ideal geometry of carbon")
     st.markdown(ct.non_ideal_geometry_1)
 
     # Video 3
@@ -81,10 +99,16 @@ def main():
     st.header("Summary")
     st.markdown(ct.summary)
 
-    # for video in ct.video_links:
-    #     st.header(video["title"])
-    #     st.video(video["url"])
-    #     st.write(video["description"])
+    # Outline sidebar
+    subheaders = ["Wettability issue", "Non Ideal geometry of carbon", "Diffusion-driven cross contamination"]
+    st.sidebar.markdown("# Outline")
+    st.sidebar.markdown(f"<ul> "
+                        f"{header_sidebar('Background')}"
+                        f"{header_sidebar('Objectives')}"
+                        f"{header_sidebar('Discussions', subheaders=subheaders)}"
+                        f"{header_sidebar('Summary')}"
+                        f"</ul>",
+                        unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
