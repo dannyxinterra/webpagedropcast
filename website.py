@@ -9,12 +9,17 @@ import streamlit as st
 import content as ct
 
 
-def add_image(image_url, caption, width=100):
+def add_fig(fig_info, width=100):
+    fig_url, fig_cap = fig_info
     st.markdown(
-        f"<div style='text-align: center;'><img src='{image_url}' style='max-width: {width}%; height: auto;'/></div>",
+        f"<div style='text-align: center;'><img src='{fig_url}' style='max-width: {width}%; height: auto;'/></div>",
         unsafe_allow_html=True,
     )
-    st.caption(caption)
+    st.caption(fig_cap)
+
+
+def add_video(video_url, caption):
+    pass
 
 
 def main():
@@ -26,7 +31,7 @@ def main():
     st.markdown(ct.background)
 
     # Figure 1
-    add_image(ct.figure_1_url, ct.figure_1_cap)
+    add_fig(ct.fig_info[0])
 
     st.header("Objectives")
     st.markdown(ct.objectives)
@@ -38,19 +43,19 @@ def main():
     st.markdown(ct.wettability_issue)
 
     # Figure 2
-    add_image(ct.figure_2_url, ct.figure_2_cap)
+    add_fig(ct.fig_info[1])
 
     st.subheader("Non Ideal geometry of carbon substrate")
     st.markdown(ct.non_ideal_geometry)
 
     # Figure 3
-    add_image(ct.figure_3_url, ct.figure_3_cap)
+    add_fig(ct.fig_info[2])
 
     st.subheader("Diffusion-driven cross contamination")
     st.markdown(ct.cross_contamination)
 
     # Figure 4
-    add_image(ct.figure_4_url, ct.figure_4_cap)
+    add_fig(ct.fig_info[3])
 
     st.header("Summary")
     st.markdown(ct.summary)
