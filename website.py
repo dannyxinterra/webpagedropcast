@@ -26,7 +26,7 @@ def create_link(text):
     # remove spaces and special characters from the text
     link_text = text.lower().replace(" ", "-").replace(".", "")
     # return the hyperlink
-    return f"<a style='text-decoration:none; color:#333' href='#{link_text}'>{text}</a>"
+    return f"<a style='text-decoration:none; color:#888' href='#{link_text}'>{text}</a>"
 
 
 def header_sidebar(text, subheaders=None):
