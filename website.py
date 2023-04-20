@@ -17,23 +17,34 @@ def add_fig(fig_url, fig_cap, width=100):
     st.caption(fig_cap)
 
 
-def add_video(video_url, caption):
-    pass
+def add_video(vid_url, vid_cap):
+    st.video(vid_url)
+    st.caption(vid_cap)
 
 
 def main():
     st.title(ct.title)
 
-    st.markdown(ct.intro)
+    st.write('')
 
-    st.header("Background")
-    st.markdown(ct.background)
+    st.caption(ct.author, unsafe_allow_html=True)
+
+    st.markdown(ct.intro)
 
     # Figure 1
     add_fig(ct.fig_urls[0], ct.fig_caps[0])
 
+    st.header("Background")
+    st.markdown(ct.background, unsafe_allow_html=True)
+
+    # Video 1
+    add_video(ct.vid_urls[0], ct.vid_caps[0])
+
     st.header("Objectives")
-    st.markdown(ct.objectives)
+    st.markdown(ct.objectives, unsafe_allow_html=True)
+
+    # Video 2
+    add_video(ct.vid_urls[1], ct.vid_caps[1])
 
     st.header("Discussions")
     st.markdown(ct.discussions)
@@ -45,10 +56,21 @@ def main():
     add_fig(ct.fig_urls[1], ct.fig_caps[1])
 
     st.subheader("Non Ideal geometry of carbon substrate")
-    st.markdown(ct.non_ideal_geometry)
+    st.markdown(ct.non_ideal_geometry_1)
+
+    # Video 3
+    add_video(ct.vid_urls[2], ct.vid_caps[2])
+
+    st.markdown(ct.non_ideal_geometry_2)
 
     # Figure 3
     add_fig(ct.fig_urls[2], ct.fig_caps[2])
+
+    # Video 4
+    add_video(ct.vid_urls[3], ct.vid_caps[3])
+
+    # Video 5
+    add_video(ct.vid_urls[4], ct.vid_caps[4])
 
     st.subheader("Diffusion-driven cross contamination")
     st.markdown(ct.cross_contamination)
@@ -59,10 +81,10 @@ def main():
     st.header("Summary")
     st.markdown(ct.summary)
 
-    for video in ct.video_links:
-        st.header(video["title"])
-        st.video(video["url"])
-        st.write(video["description"])
+    # for video in ct.video_links:
+    #     st.header(video["title"])
+    #     st.video(video["url"])
+    #     st.write(video["description"])
 
 
 if __name__ == "__main__":

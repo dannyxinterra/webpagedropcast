@@ -1,13 +1,15 @@
-title = """Case study: debugging a “simple” drop-casting process on carbon paper"""
+title = """Debugging a “simple” drop-casting process on carbon paper"""
 
-intro = """As stated in the main body, it is a common expectation that automated experiment platforms will readily 
+author = """_Zhichu Ren, zc_ren[at]mit.edu_"""
+
+intro = """It is a common expectation that automated experiment platforms will readily 
 deliver reproducible results. However, in reality, this is often not the case. A controlled level of noise can only 
 be attained through a meticulous analysis of each stage of the pipeline. Here, we will use the drop-casting step in 
 our experimental workflow as a case study."""
 
 background = """There are plenty of methods to load the active materials onto a conductive substrate to make a 
-heterogeneous electrochemistry catalyst. In our lab, the active materials are multiple metal salts (e.g. FeCl3, 
-Cu(NO3)2) dissolved in ethanol, and the substrate is a commercial carbon thin film. We are using Opentrons to handle 
+heterogeneous electrochemistry catalyst. In our lab, the active materials are multiple metal salts (e.g. FeCl<sub>3</sub>, 
+Cu(NO3)<sub>2</sub>) dissolved in ethanol, and the substrate is a commercial carbon thin film. We are using Opentrons to handle 
 all the precursor mixing jobs, as well as the final drop-casting step, which can be illustrated in Fig 1. From a 
 manual experiment perspective, this step cannot be even simpler, a bunch of operations are surely more complex than 
 this one. However, lots of issues will just arise once we attempt to automate this process in a high-throughput 
@@ -16,7 +18,7 @@ and sample size."""
 
 objectives = """The objectives are mainly two folds: (i) the catalyst materials are well dispersed into the carbon 
 substrate, so that the metal elements are well utilized, and (ii) the catalyst footprint areas are identical across 
-samples, since it’s a convention to normalize the performance (current density - mA/cm2) based on this number. 
+samples, since it’s a convention to normalize the performance by this number (current density @ mA/cm<sup>2</sup>). 
 Seemingly straightforward, it actually took us about 3 months to make this automated workflow “work”, as shown in 
 Vid 2."""
 
@@ -43,7 +45,7 @@ loading of each sample becomes quite different. To resolve this issue, a zig-zag
 3d-printed (Fig 2c), which eliminates physical contact at the drop-casting spots (Fig 2d). In this manner, 
 the precursors can be well retained within the carbon strip, and no leakage occurs."""
 
-non_ideal_geometry = """The carbon substrate cut from a commercial 10cm by 10cm sheet may not always be perfectly 
+non_ideal_geometry_1 = """The carbon substrate cut from a commercial 10cm by 10cm sheet may not always be perfectly 
 flat, as it can have some inherent curvature and cutting-induced twist. This issue was recognized after observing a 
 wired phenomenon in some samples, e.g. in Vid 3 (carbon strip indexed from 1-6 from left to right), 
 we can see (i) no precursor foot print on #6 carbon strip, and (ii) there are regular footprints in #4 and #5 in the 
@@ -55,13 +57,14 @@ while the droplet will dangle on the tip near the edge, giving no precursor foot
 hypothesis was confirmed through a closer observation in Vid 4. However, lowering the height of the 
 pipetting tip recklessly could result in experiment accidents, such as piercing through and even dragging the carbon 
 substrate, as shown in Vid 5. The discovery of this issue is asking us to carefully tune the height 
-of the pipette tip, down to 100μm interval (the thickness of the carbon strip varies between 100~400μm).
+of the pipette tip, down to 100μm interval (the thickness of the carbon strip varies between 100~400μm)."""
 
-Besides, some local tilt can also affect the shape of the footprint. Instead of being dispersed isotropically, 
-the precursor will diffuse primarily in a particular direction driven by gravity. As shown in Fig 3b, the upper half 
-of the sample in the first carbon strip displays a darker color due to a local incline towards the up side. These 
-results reminded us to control the cutting process as well, which could affect the deformation of the length edge of 
-the carbon strip. The substitution of a lab scissor with a large paper trimmer significantly relieved this issue."""
+non_ideal_geometry_2 = """Besides, some local tilt can also affect the shape of the footprint. Instead of being 
+dispersed isotropically, the precursor will diffuse primarily in a particular direction driven by gravity. As shown 
+in Fig 3b, the upper half of the sample in the first carbon strip displays a darker color due to a local incline 
+towards the up side. These results reminded us to control the cutting process as well, which could affect the 
+deformation of the length edge of the carbon strip. The substitution of a lab scissor with a large paper trimmer 
+significantly relieved this issue."""
 
 cross_contamination = """In most cases, the goal is to drop-cast as quickly as possible to reduce ethanol solvent 
 evaporation and save time. However, it has been observed that if the drop-casting rate is too fast, the precursor can 
@@ -81,9 +84,9 @@ clearly illustrates that the footprints of both carbon strips tend to extend in 
 fibers. Thus, the “perpendicular cut” method should be employed for all samples to minimize the risk of 
 cross-contamination between neighboring samples."""
 
-summary = """As mentioned in the main text, all the aforementioned issues may look trivial at first glance, 
+summary = """All the aforementioned issues may look trivial at first glance, 
 while they only become trivial after we realize their existence. Before we take them under control, they are real 
-challenges that could fail our active learning project. Taking the last issue as an example, as shown in Fig 4c, 
+challenges that could fail an active learning project. Taking the last issue as an example, as shown in Fig 4c, 
 the carbon strips prepared with “parallel cut” method could deliver ~10% larger footprint area than that prepared 
 with “perpendicular cut” method, which will lead to a nominal increase in electrocatalytic performance (even with a 
 fixed catalyst loading, a larger sample area usually yields a higher current value). Without acknowledging the carbon 
@@ -128,30 +131,27 @@ we denote the dominant direction with white lines. This anisotropy leads to two 
 where we cut parallel with the dominant fiber direction.""",
 ]
 
-video_links = [
-    {
-        "title": "Video 1",
-        "url": "https://www.youtube.com/watch?v=b3kMRvcjZIQ",
-        "description": "Description for video 1."
-    },
-    {
-        "title": "Video 2",
-        "url": "https://www.youtube.com/watch?v=fDqDH5OBnF8",
-        "description": "Description for video 2."
-    },
-    {
-        "title": "Video 3",
-        "url": "https://www.youtube.com/watch?v=b8KKdyae6aM",
-        "description": "Description for video 3."
-    },
-    {
-        "title": "Video 4",
-        "url": "https://www.youtube.com/watch?v=pflk6gPsC2o",
-        "description": "Description for video 3."
-    },
-    {
-        "title": "Video 5",
-        "url": "https://www.youtube.com/watch?v=j6QyzAHanO8",
-        "description": "Description for video 3."
-    }
+vid_urls = [
+    "https://www.youtube.com/watch?v=b3kMRvcjZIQ",
+    "https://www.youtube.com/watch?v=fDqDH5OBnF8",
+    "https://www.youtube.com/watch?v=b8KKdyae6aM",
+    "https://www.youtube.com/watch?v=pflk6gPsC2o",
+    "https://www.youtube.com/watch?v=j6QyzAHanO8"
+]
+
+vid_caps = [
+    """Video 1: The hyper-lapse video recording drop-casting process immediately after the construction of the 
+    automation workflow, which delivered drop-casting footprints with a large variations.""",
+
+    """Video 2: The drop-casting process after 3-month step-by-step analysis, which eventually generating consistent 
+    results.""",
+
+    """Video 3: The disappearance of drop-casting footprint near the edge of the carbon strip (4th & 5th row) appears 
+    to be related to wetting issue, while it's caused by intrinsic curvature of the carbon substrate.""",
+
+    """Video 4: The droplet will dangling on the tip end and never touch the carbon substrate if the pipette tip is 
+    set a little too high, leaving no footprint on the carbon substrate.""",
+
+    """Video 5: If the tip is too low, it could be a disaster. Carbon substrate will be pierced by the tip and 
+    dragged away.""",
 ]
