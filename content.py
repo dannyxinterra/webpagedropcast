@@ -128,8 +128,6 @@ we denote the dominant direction with white lines. This anisotropy leads to two 
 where we cut parallel with the dominant fiber direction.""",
 ]
 
-fig_info = list(zip(fig_urls, fig_caps))
-
 video_links = [
     {
         "title": "Video 1",

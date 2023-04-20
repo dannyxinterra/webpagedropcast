@@ -10,7 +10,6 @@ import content as ct
 
 
 def add_fig(fig_url, fig_cap, width=100):
-    # fig_url, fig_cap = fig_info
     st.markdown(
         f"<div style='text-align: center;'><img src='{fig_url}' style='max-width: {width}%; height: auto;'/></div>",
         unsafe_allow_html=True,
@@ -43,19 +42,19 @@ def main():
     st.markdown(ct.wettability_issue)
 
     # Figure 2
-    add_fig(ct.fig_info[1])
+    add_fig(ct.fig_urls[1], ct.fig_caps[1])
 
     st.subheader("Non Ideal geometry of carbon substrate")
     st.markdown(ct.non_ideal_geometry)
 
     # Figure 3
-    add_fig(ct.fig_info[2])
+    add_fig(ct.fig_urls[2], ct.fig_caps[2])
 
     st.subheader("Diffusion-driven cross contamination")
     st.markdown(ct.cross_contamination)
 
     # Figure 4
-    add_fig(ct.fig_info[3])
+    add_fig(ct.fig_urls[3], ct.fig_caps[3])
 
     st.header("Summary")
     st.markdown(ct.summary)
