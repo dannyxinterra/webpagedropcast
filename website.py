@@ -31,7 +31,6 @@ def main():
     st.markdown(ct.background)
 
     # Figure 1
-    st.image("https://imgur.com/TDN2xOZ.png")
     add_fig(ct.fig_urls[0], ct.fig_caps[0])
 
     st.header("Objectives")
