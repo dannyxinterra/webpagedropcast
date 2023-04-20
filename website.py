@@ -9,8 +9,8 @@ import streamlit as st
 import content as ct
 
 
-def add_fig(fig_info, width=100):
-    fig_url, fig_cap = fig_info
+def add_fig(fig_url, fig_cap, width=100):
+    # fig_url, fig_cap = fig_info
     st.markdown(
         f"<div style='text-align: center;'><img src='{fig_url}' style='max-width: {width}%; height: auto;'/></div>",
         unsafe_allow_html=True,
@@ -31,7 +31,7 @@ def main():
     st.markdown(ct.background)
 
     # Figure 1
-    add_fig(ct.fig_info[0])
+    add_fig(ct.fig_urls[0], ct.fig_caps[0])
 
     st.header("Objectives")
     st.markdown(ct.objectives)
